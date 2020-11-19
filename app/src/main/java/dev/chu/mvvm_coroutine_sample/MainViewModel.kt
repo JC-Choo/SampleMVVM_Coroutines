@@ -8,8 +8,10 @@ import dev.chu.mvvm_coroutine_sample.data.entity.User
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
+
     val users = MutableLiveData<List<User>>()
     val message = MutableLiveData<String>()
+
     init {
         viewModelScope.launch {
             try {
