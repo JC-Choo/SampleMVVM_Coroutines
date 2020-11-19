@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
                 this.users = it
             })
         }
+
         model.message.observe(this, {
             binding.message.text = it
         })
