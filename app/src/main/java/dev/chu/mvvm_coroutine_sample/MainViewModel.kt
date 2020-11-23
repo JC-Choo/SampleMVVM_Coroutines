@@ -16,7 +16,7 @@ class MainViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 message.postValue("Loading...")
-                val data = Api.userServices.getUsers()
+                val data = Api.createService().getUsers()
                 users.postValue(data)
                 message.postValue(null)
             } catch (ex: Exception) {

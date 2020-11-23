@@ -12,9 +12,12 @@ object Api {
         }
     ).build()
 
-    val userServices = Retrofit.Builder()
-        .baseUrl("https://jsonplaceholder.typicode.com/")
-        .client(okHttpBuilder)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build().create(UserServices::class.java)
+    fun createService(): UserServices {
+        return Retrofit.Builder()
+            .baseUrl("https://jsonplaceholder.typicode.com/")
+            .client(okHttpBuilder)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(UserServices::class.java)
+    }
 }
